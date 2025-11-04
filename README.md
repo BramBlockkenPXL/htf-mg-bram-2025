@@ -46,7 +46,7 @@ Fishy Dex is a web-based application designed for fish enthusiasts, marine biolo
 1. **Clone the repository**
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/optis-nv/htf-2025-nextjs
    cd htf-26-next
    ```
 
