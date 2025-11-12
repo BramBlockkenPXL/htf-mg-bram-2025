@@ -28,6 +28,9 @@ export default function FishTrackerLayout({ fishes, sortedFishes }: FishTrackerL
           <Link href="/catalog" className="ml-4 px-3 py-1 bg-[color-mix(in_srgb,var(--color-sonar-green)_20%,transparent)] border border-sonar-green text-sonar-green text-xs font-mono rounded hover:bg-[color-mix(in_srgb,var(--color-sonar-green)_30%,transparent)] transition-all">
             VIEW CATALOG
           </Link>
+          <Link href="/diving-centers" className="px-3 py-1 bg-[color-mix(in_srgb,var(--color-warning-amber)_20%,transparent)] border border-warning-amber text-warning-amber text-xs font-mono rounded hover:bg-[color-mix(in_srgb,var(--color-warning-amber)_30%,transparent)] transition-all">
+            DIVE CENTERS
+          </Link>
         </div>
         <div className="flex items-center gap-4 text-xs font-mono">
           <div className="border border-panel-border shadow-[--shadow-cockpit-border] px-3 py-1 rounded">

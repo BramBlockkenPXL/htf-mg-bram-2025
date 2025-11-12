@@ -64,21 +64,26 @@ export default function CatalogFishCard({ fish, onToggleSeen }: CatalogFishCardP
 
       // 🔁 Update last seen timestamp in the database via the API
       try {
-        const res = await fetch(`/api/fish-sightings/${fish.id}/timestamp`, {
+        const url = `/api/fish-sightings/${fish.id}/timestamp`;
+        console.log(`[CatalogFishCard] Calling PUT ${url}...`);
+        const res = await fetch(url, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ timestamp: new Date().toISOString() }),
         });
+        console.log(`[CatalogFishCard] Response status: ${res.status}`);
         if (res.ok) {
           const data = await res.json();
+          console.log(`[CatalogFishCard] Updated timestamp:`, data);
           if (data.timestamp) {
             setLastSeen(data.timestamp);
           }
         } else {
-          console.error("Failed to update timestamp:", res.status);
+          const errText = await res.text();
+          console.error(`[CatalogFishCard] Failed to update timestamp: ${res.status} - ${errText}`);
         }
       } catch (err) {
-        console.error("Failed to update last seen timestamp", err);
+        console.error(`[CatalogFishCard] Exception updating last seen timestamp:`, err);
       }
     }
 
