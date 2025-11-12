@@ -15,7 +15,7 @@ export default function FishCard({ fish, onHover }: FishCardProps) {
       onMouseLeave={() => onHover?.(null)}
     >
       <div className="flex items-start justify-between mb-2">
-        <div className="flex-1">
+        <div className="flex justify-between w-full items-center">
           <div className="text-sm font-bold text-text-primary group-hover:text-sonar-green transition-colors mb-1">
             {fish.name}
           </div>
@@ -28,6 +28,11 @@ export default function FishCard({ fish, onHover }: FishCardProps) {
           </div>
         </div>
       </div>
+      <div className="text-text-secondary">
+          {/* <span>PICTURE:</span> */}
+          <img src={fish.image} alt={fish.name} className="mt-1 w-full max-h-[200px] object-cover rounded"> 
+          </img>
+        </div>
       <div className="text-xs font-mono space-y-1">
         <div className="flex justify-between text-text-secondary">
           <span>LAT:</span>
@@ -48,11 +53,6 @@ export default function FishCard({ fish, onHover }: FishCardProps) {
               addSuffix: true,
             })}
           </span>
-        </div>
-        <div className="text-text-secondary">
-          <span>PICTURE:</span>
-          <img src={fish.image} alt={fish.name} className="mt-1 w-full rounded"> 
-          </img>
         </div>
       </div>
     </div>

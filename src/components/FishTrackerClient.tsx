@@ -19,26 +19,26 @@ export default function FishTrackerClient({
 
   return (
     <PanelGroup
-      direction="vertical"
+      direction="horizontal"
       className="flex-1"
       autoSaveId="fish-tracker-client"
     >
       {/* Map Panel */}
-      <Panel defaultSize={65} minSize={30}>
-        <div className="w-full h-full relative shadow-[--shadow-map-panel]">
-          <Map fishes={fishes} hoveredFishId={hoveredFishId} />
-        </div>
-      </Panel>
+    <Panel defaultSize={65} minSize={30}>
+      <div className="w-full h-full relative shadow-[--shadow-map-panel]">
+        <Map fishes={fishes} hoveredFishId={hoveredFishId} />
+      </div>
+    </Panel>
 
-      {/* Resize Handle */}
-      <PanelResizeHandle className="h-1 bg-panel-border hover:bg-sonar-green transition-colors duration-200 cursor-row-resize relative group">
-        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-1 bg-sonar-green opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-1 bg-panel-border rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-8 h-0.5 bg-sonar-green rounded-full" />
-          </div>
+    {/* Resize Handle (horizontal layout → vertical handle) */}
+    <PanelResizeHandle className="w-1 bg-panel-border hover:bg-sonar-green transition-colors duration-200 cursor-col-resize relative group">
+      <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-1 bg-sonar-green opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-12 w-1 bg-panel-border rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="h-8 w-0.5 bg-sonar-green rounded-full" />
         </div>
-      </PanelResizeHandle>
+      </div>
+    </PanelResizeHandle>
 
       {/* Fish List Panel */}
       <Panel defaultSize={35} minSize={20}>
