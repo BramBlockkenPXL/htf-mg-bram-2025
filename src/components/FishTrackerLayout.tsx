@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { UserInfo } from "./AuthProvider";
 import FishTrackerClient from "./FishTrackerClient";
 import { Fish } from "@/types/fish";
@@ -24,6 +25,9 @@ export default function FishTrackerLayout({ fishes, sortedFishes }: FishTrackerL
           <div className="text-xs text-text-secondary font-mono">
             GLOBAL MARINE MONITORING SYSTEM
           </div>
+          <Link href="/catalog" className="ml-4 px-3 py-1 bg-[color-mix(in_srgb,var(--color-sonar-green)_20%,transparent)] border border-sonar-green text-sonar-green text-xs font-mono rounded hover:bg-[color-mix(in_srgb,var(--color-sonar-green)_30%,transparent)] transition-all">
+            VIEW CATALOG
+          </Link>
         </div>
         <div className="flex items-center gap-4 text-xs font-mono">
           <div className="border border-panel-border shadow-[--shadow-cockpit-border] px-3 py-1 rounded">

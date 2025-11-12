@@ -49,6 +49,11 @@ export default function FishCard({ fish, onHover }: FishCardProps) {
             })}
           </span>
         </div>
+        <div className="text-text-secondary">
+          <span>PICTURE:</span>
+          <img src={fish.image} alt={fish.name} className="mt-1 w-full rounded"> 
+          </img>
+        </div>
       </div>
     </div>
   );
